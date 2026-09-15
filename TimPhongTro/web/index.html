@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TimPhongTro - Tìm phòng trọ nhanh chóng</title>
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<div id="navbar"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1>Tìm phòng trọ ưng ý, nhanh chóng</h1>
+    <p>Hàng trăm tin đăng phòng trọ, căn hộ mini, studio đã được kiểm duyệt.</p>
+    <form id="home-search" class="hero-search">
+      <input id="home-q" placeholder="Nhập khu vực, đường, tên phòng...">
+      <button class="btn btn-primary" type="submit">Tìm phòng</button>
+    </form>
+  </div>
+</section>
+
+<div class="page">
+  <div class="container">
+    <div class="section-head"><h2>Phòng trọ mới đăng</h2><a class="btn" href="/pages/rooms.html">Xem tất cả</a></div>
+    <div class="room-grid" id="featured-list"><div class="empty">Đang tải...</div></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

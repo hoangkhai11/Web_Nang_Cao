@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tìm phòng trọ - TimPhongTro</title>
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/rooms.css">
+</head>
+<body>
+<div id="navbar"></div>
+
+<div class="page">
+  <div class="container">
+    <h1>Tìm phòng trọ</h1>
+    <p class="sub">Lọc theo khu vực, mức giá để tìm phòng phù hợp.</p>
+
+    <form id="form-filter" class="filter-bar card">
+      <div class="form-grid">
+        <div><label for="f-q">Từ khóa</label><input id="f-q" placeholder="Tên phòng, địa chỉ..."></div>
+        <div><label for="f-quan">Quận / Huyện</label><input id="f-quan" placeholder="VD: Quận 10"></div>
+        <div><label for="f-giamin">Giá từ (đ)</label><input id="f-giamin" type="number" min="0"></div>
+        <div><label for="f-giamax">Giá đến (đ)</label><input id="f-giamax" type="number" min="0"></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Lọc kết quả</button>
+    </form>
+
+    <div class="section-head" style="margin-top:24px;"><h2>Kết quả</h2></div>
+    <div class="room-grid" id="room-list"><div class="empty">Đang tải...</div></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/rooms.js"></script>
+</body>
+</html>

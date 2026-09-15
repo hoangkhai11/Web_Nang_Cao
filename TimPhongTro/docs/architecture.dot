@@ -1,0 +1,15 @@
+// Render: dot -Tpng architecture.dot -o architecture.png
+digraph Architecture {
+  rankdir=LR;
+  node [shape=box, style="rounded,filled", fontname="Segoe UI", fontsize=11, fillcolor="#E4F0EC", color="#1F6F5C"];
+  edge [fontname="Segoe UI", fontsize=9];
+
+  Browser [label="Trình duyệt\n(web/ - HTML/CSS/JS thuần)"];
+  Server [label="Server Node.js/Express\n(server/ - REST API, JWT, bcrypt)"];
+  DB [label="MySQL\n(database/tim_phong_tro.sql)", shape=cylinder, fillcolor="#FBEFDD", color="#B4700F"];
+
+  Browser -> Server [label="fetch() /api/...\n+ Bearer token"];
+  Server -> Browser [label="JSON"];
+  Server -> DB [label="mysql2 (prepared statements)"];
+  DB -> Server [label="rows"];
+}

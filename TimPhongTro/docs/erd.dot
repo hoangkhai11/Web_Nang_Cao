@@ -1,0 +1,17 @@
+// Render: dot -Tpng erd.dot -o erd.png
+digraph ERD {
+  rankdir=LR;
+  node [shape=record, fontname="Segoe UI", fontsize=10];
+  edge [fontname="Segoe UI", fontsize=9];
+
+  NguoiDung [label="{NguoiDung|maNguoiDung (PK)\lhoTen\lemail (UNIQUE)\lsoDienThoai\lmatKhau (hash)\lvaiTro (Admin/NguoiDung)\lngayTao\l}"];
+  Phong [label="{Phong|maPhong (PK)\ltieuDe\lmoTa\ldiaChi\lquanHuyen\lgia\ldienTich\lhinhAnh\ltrangThai\lmaNguoiDang (FK)\lngayDang\lngayCapNhat\l}"];
+  PhongYeuThich [label="{PhongYeuThich|maYeuThich (PK)\lmaNguoiDung (FK)\lmaPhong (FK)\lngayLuu\l}"];
+  YeuCau [label="{YeuCau|maYeuCau (PK)\lmaNguoiDung (FK)\lmaPhong (FK)\lhoTenLienHe\lsoDienThoaiLienHe\lloiNhan\ltrangThai\lngayTao\l}"];
+
+  NguoiDung -> Phong [label="1 - N (dang tin)"];
+  NguoiDung -> PhongYeuThich [label="1 - N (luu tin)"];
+  Phong -> PhongYeuThich [label="1 - N (duoc luu)"];
+  NguoiDung -> YeuCau [label="1 - N (gui yeu cau)"];
+  Phong -> YeuCau [label="1 - N (nhan yeu cau)"];
+}
